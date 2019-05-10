@@ -10,14 +10,22 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
+
+ //l3 is a new result ListNode. Due to scoping, had to declare it outside so that I can keep adding new nodes to the next pointer.
 let l3 = new ListNode(0);
-//console.log(l3)
+
+//added two parameters: a=l3, cond=false. l3 is the resulting listNode, first it is l3 and after that it is l3.next and condition is to see
+//if previous val is over 10 then add 1 to the current value
 var addTwoNumbers = function(l1, l2, a=l3, cond=false) {
     let added = 0
+    //check the condition
     if(cond){
         added += 1;
     }
+    //set the current value
     added += l1.val + l2.val;
+
+    //set the condition
     if(added > 9){
         added -= 10;
         cond = true;
@@ -25,9 +33,11 @@ var addTwoNumbers = function(l1, l2, a=l3, cond=false) {
     else{
         cond = false;
     }
+    //set the values for current listNode
     a.val = added;
     a.next = null;
     
+    //conditional statement for different cases
     if(l1.next == null && l2.next == null){
         if(cond){
            let v = new ListNode(0);
