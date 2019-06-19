@@ -16,4 +16,4 @@ var romanToInt = function(str) {
     return result;
 };
 
-console.log(romanToInt('III'));
+console.log(romanToInt('IIV'));
