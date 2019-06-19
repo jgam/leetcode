@@ -1,21 +1,19 @@
-var romanToInt = function(s) {
+var romanToInt = function(str) {
     
-    let symbol_to_val = {I:1, V:5, X:10, L:50, C:100, D:500, M:1000};
-    let total = 0;
-    let current = 0;
-    
-    for(let i = 0; i < s.length; i++){
-        
-        if(symbol_to_val[s[i]] > current){
-            //
+    var result = 0;
+    // the result is now a number, not a string
+    var decimal = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+    var roman = ["M", "CM","D","CD","C", "XC", "L", "XL", "X","IX","V","IV","I"];
+    for (var i = 0;i<=decimal.length;i++) {
+        while (str.indexOf(roman[i]) === 0){
+        //checking for the first characters in the string
+        result += decimal[i];
+        //adding the decimal value to our result counter
+        str = str.replace(roman[i],'');
+        //remove the matched Roman letter from the beginning
         }
-        
-        current += symbol_to_val[s[i]];
-        
-        console.log(s[i])
-        console.log(symbol_to_val[s[i]])
     }
-    
+    return result;
 };
 
-romanToInt('III');
+console.log(romanToInt('III'));
