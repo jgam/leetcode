@@ -6,7 +6,7 @@ var romanToInt = function(s) {
     
     for(let i = 0; i < s.length; i++){
         
-        if(s[i] > current){
+        if(symbol_to_val[s[i]] > current){
             //
         }
         
@@ -17,3 +17,5 @@ var romanToInt = function(s) {
     }
     
 };
+
+romanToInt('III');
