@@ -5,6 +5,7 @@ var convert = function(s, numRows) {
     let start = 0;
 
     console.log(arr)
+    
     for(let i = 0; i<s.length; i+=vertical){
         start = i
         let arr_index = 0;
@@ -13,6 +14,10 @@ var convert = function(s, numRows) {
         for(let j = vertical-1; j>0; j--){//j>i needs to be defined
             arr_index += 1;
             start+=1;
+            
+            if(start > s.length){
+                break;
+            }
             if (start == j){
                 arr[arr_index] = s[start];
                 break;
@@ -20,20 +25,14 @@ var convert = function(s, numRows) {
             //try and except for the last loop - kinda long but whatever
             try{
                 arr[arr_index]+=s[start];
+                if(start+j < s.length){
+                    arr[arr_index] += s[start+j];
+                }
             }
             finally{
                 continue;
             }
-
-            try{
-                arr[arr_index]+=s[start+j];
-            }
-            finally{
-                continue;
-            }
-
-            
-
+            //this needs to be done
         }
         console.log(arr);
     }
