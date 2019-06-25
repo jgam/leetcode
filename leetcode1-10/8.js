@@ -15,5 +15,36 @@ Only the space character ' ' is considered as whitespace character.
 Assume we are dealing with an environment which could only store integers within the 32-bit signed integer range: [−231,  231 − 1]. If the numerical value is out of the range of representable values, INT_MAX (231 − 1) or INT_MIN (−231) is returned.
 */
 var myAtoi = function(str) {
-    
+    let ret = '';
+    str = str.trim();
+    let first = true
+    let notation = ''
+
+    for(let i = 0; i<str.length; i ++){
+        if(str[i]=='-'||str[i]=='+'){
+            notation = str[i];
+            continue;
+        }
+        else if(isNaN(str[i])){
+            if(first){
+                first=false;
+            }
+            else{
+                break;
+            }
+        }
+        else{
+            ret+=str[i];
+            first = false;
+        }
+    }
+
+    if(notation == "-"){
+        return parseInt(ret) * -1;
+    }
+    else{
+        return parseInt(ret);
+    }
 };
+
+console.log(myAtoi('-a123asdf123'));
