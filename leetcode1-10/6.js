@@ -30,13 +30,18 @@ var convert = function(s, numRows) {
                 if(s[start]==undefined){
                     continue
                 }
+                /*
+                console.log('here is b?')
+                console.log(s[start])
+                console.log(s[start+j-arr_index])
+                */
                 arr[arr_index]+=s[start];//this needs to be fixed to pass the test
                 //this needs to be fixed
                 if(arr_index == numRows-1){
                     continue
                 }
 
-                if(start+j < s.length){
+                if(start+j <= s.length){//changed to <= from <
                     arr[arr_index] += s[start+j-arr_index];
                 }
             }
