@@ -1,6 +1,4 @@
 var convert = function(s, numRows) {
-    //num rows
-
     //exception of one row
     if(numRows==1){
         return s;
