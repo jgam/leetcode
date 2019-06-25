@@ -30,11 +30,13 @@ var convert = function(s, numRows) {
                 if(s[start]==undefined){
                     continue
                 }
-                /*
+                
                 console.log('here is b?')
                 console.log(s[start])
                 console.log(s[start+j-arr_index])
-                */
+                console.log(start, j)
+                console.log(start+j, s.length);//what if there is undefined, then don't add to the string
+                
                 arr[arr_index]+=s[start];//this needs to be fixed to pass the test
                 //this needs to be fixed
                 if(arr_index == numRows-1){
@@ -50,7 +52,7 @@ var convert = function(s, numRows) {
             }
             //this needs to be done
         }
-        console.log(arr);
+        //console.log(arr);
     }
     //outer for loop of num Rows and each for loop inside should have 
     //for loop through vertical number and att it to the return string
@@ -58,7 +60,11 @@ var convert = function(s, numRows) {
     return arr.join('');
 };
 
-console.log(convert("ABCD",3))//PAHNAPLSIIGYI, PINALSIGYAHRPI
+console.log(convert("ABCDE",4))//PAHNAPLSIIGYI, PINALSIGYAHRPI
 
 //ABCD 3
 //ABCDE 4
+
+//p   a   h   n
+//a p l s i i g
+//y   i   r
