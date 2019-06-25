@@ -5,7 +5,7 @@ var convert = function(s, numRows) {
     let start = 0;
 
     console.log(arr)
-    
+
     for(let i = 0; i<s.length; i+=vertical){
         start = i
         let arr_index = 0;
@@ -14,6 +14,9 @@ var convert = function(s, numRows) {
         for(let j = vertical-1; j>0; j--){//j>i needs to be defined
             arr_index += 1;
             start+=1;
+            if(arr_index == numRows){
+                break;
+            }
             
             if(start > s.length){
                 break;
@@ -24,9 +27,14 @@ var convert = function(s, numRows) {
             }
             //try and except for the last loop - kinda long but whatever
             try{
-                arr[arr_index]+=s[start];
+                arr[arr_index]+=s[start];//this needs to be fixed to pass the test
+                //this needs to be fixed
+                if(arr_index == numRows-1){
+                    continue
+                }
+
                 if(start+j < s.length){
-                    arr[arr_index] += s[start+j];
+                    arr[arr_index] += s[start+j-1];
                 }
             }
             finally{
