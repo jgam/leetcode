@@ -4,7 +4,7 @@ var convert = function(s, numRows) {
     if(numRows==1){
         return s;
     }
-    
+
     let vertical = (numRows-2)*2+2
     var arr = Array(numRows).join(".").split(".");
     let start = 0;
@@ -73,10 +73,3 @@ var convert = function(s, numRows) {
 };
 
 console.log(convert("PAYPALISHIRING",3))//PAHNAPLSIIGYI, PINALSIGYAHRPI
-
-//ABCD 3
-//ABCDE 4
-
-//p   a   h   n
-//a p l s i i g
-//y   i   r
