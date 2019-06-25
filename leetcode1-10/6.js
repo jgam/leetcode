@@ -27,6 +27,9 @@ var convert = function(s, numRows) {
             }
             //try and except for the last loop - kinda long but whatever
             try{
+                if(s[start]==undefined){
+                    continue
+                }
                 arr[arr_index]+=s[start];//this needs to be fixed to pass the test
                 //this needs to be fixed
                 if(arr_index == numRows-1){
@@ -34,7 +37,7 @@ var convert = function(s, numRows) {
                 }
 
                 if(start+j < s.length){
-                    arr[arr_index] += s[start+j-1];
+                    arr[arr_index] += s[start+j-arr_index];
                 }
             }
             finally{
@@ -47,7 +50,10 @@ var convert = function(s, numRows) {
     //outer for loop of num Rows and each for loop inside should have 
     //for loop through vertical number and att it to the return string
     //after the first loop, 
-    return s;
+    return arr.join('');
 };
 
-console.log(convert("paypalishiring",3))//PAHNAPLSIIGYI, PINALSIGYAHRPI
+console.log(convert("ABCD",3))//PAHNAPLSIIGYI, PINALSIGYAHRPI
+
+//ABCD 3
+//ABCDE 4
