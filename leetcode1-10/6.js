@@ -1,10 +1,15 @@
 var convert = function(s, numRows) {
     //num rows
+
+    if(numRows==1){
+        return s;
+    }
+    
     let vertical = (numRows-2)*2+2
     var arr = Array(numRows).join(".").split(".");
     let start = 0;
 
-    console.log(arr)
+    //console.log(arr)
 
     for(let i = 0; i<s.length; i+=vertical){
         start = i
@@ -30,22 +35,29 @@ var convert = function(s, numRows) {
                 if(s[start]==undefined){
                     continue
                 }
-                
+                /*
                 console.log('here is b?')
                 console.log(s[start])
                 console.log(s[start+j-arr_index])
                 console.log(start, j)
                 console.log(start+j, s.length);//what if there is undefined, then don't add to the string
-                
+                */
                 arr[arr_index]+=s[start];//this needs to be fixed to pass the test
                 //this needs to be fixed
                 if(arr_index == numRows-1){
                     continue
                 }
-
+                /*
                 if(start+j <= s.length){//changed to <= from <
                     arr[arr_index] += s[start+j-arr_index];
                 }
+                */
+               if(s[start+j-arr_index] == undefined){
+                   continue
+               }
+               else{
+                   arr[arr_index] += s[start+j-arr_index];
+               }
             }
             finally{
                 continue;
@@ -60,7 +72,7 @@ var convert = function(s, numRows) {
     return arr.join('');
 };
 
-console.log(convert("ABCDE",4))//PAHNAPLSIIGYI, PINALSIGYAHRPI
+console.log(convert("PAYPALISHIRING",3))//PAHNAPLSIIGYI, PINALSIGYAHRPI
 
 //ABCD 3
 //ABCDE 4
