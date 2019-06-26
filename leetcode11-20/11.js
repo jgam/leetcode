@@ -8,5 +8,6 @@ Output: 49
 
 */
 var maxArea = function(height) {
+    //height is the list
     
 };
