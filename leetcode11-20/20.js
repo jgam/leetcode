@@ -13,15 +13,14 @@ var isValid = function(s) {
         }
         else{
             if(myStack[myStack.length-1] === close[s[i]]){
-                myStack.pop(myStack.length-1);
+                myStack.pop();
             }
             else{
                 return false;
             }
         }
     }
-
-    if(myStack===[]){
+    if(myStack.length === 0){
         return true;
     }
     else{
