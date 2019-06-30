@@ -9,5 +9,7 @@ Output: 49
 */
 var maxArea = function(height) {
     //height is the list
-    
+    //we need to start from the middle.
+    //decide which direction to move (right or left) based on comparing the number(small number direction)
+    //now what if the two containers have same height
 };
