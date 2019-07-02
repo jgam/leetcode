@@ -22,7 +22,7 @@ var maxArea = function(height) {
     let current_area = 0;
 
     //start the for loop and keep expanding the array
-
+    /*
     function comparing(current_area, start, end, height){
         let max_area2 = current_area;
         let start2 = start;
@@ -64,6 +64,7 @@ var maxArea = function(height) {
         return max_area2;
 
     }
+    */
 
     while(start===0 && end ===height.length-1){
         
