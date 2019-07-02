@@ -45,6 +45,10 @@ var maxArea = function(height) {
         else if(height[start]<height[end]){
             start -= 1;
         }
+        else{
+            //so here is when start and end are the same...in here we should 
+            // we have to go two ways to make sure check everything
+        }
 
 
     }
