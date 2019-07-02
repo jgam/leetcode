@@ -12,4 +12,14 @@ var maxArea = function(height) {
     //we need to start from the middle.
     //decide which direction to move (right or left) based on comparing the number(small number direction)
     //now what if the two containers have same height
+
+    //micro level architecting
+    //first start with defining start and end index
+    var middle = parseInt(height.length/2);
+    var start = middle-1;
+    var end = middle;
+
+    
 };
+
+maxArea([1,2,3,4,5,6,7,8,9])
