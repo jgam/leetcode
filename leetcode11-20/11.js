@@ -13,7 +13,8 @@ var maxArea = function(height) {
     let max_area = 0;
     while(start != end ){
         max_area = Math.max(max_area, Math.min(height[start], height[end]) * (end-start));
-
+        console.log(max_area)
+        console.log(start, end)
         if(height[start]> height[end]){
             end -= 1;
         }
@@ -26,4 +27,4 @@ var maxArea = function(height) {
 
 };
 
-console.log(maxArea([1,8,6,2,5,4,8,3,7]))
+console.log(maxArea([1,8,18,2,5,20,8,3,7]))
