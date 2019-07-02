@@ -18,8 +18,24 @@ var maxArea = function(height) {
     var middle = parseInt(height.length/2);
     var start = middle-1;
     var end = middle;
+    let max_area = 0;
+    let current_area = 0;
 
     //start the for loop and keep expanding the array
+
+    while(start===0 && end ===height.length-1){
+        
+        current_area = Math.min(heihgt[start], height[end]) * (end-start);
+        
+        //comparing current and max area
+        if(current_area > max_area){
+            max_area = current_area;
+        }
+
+        //now adding 1 to start or end
+
+
+    }
 
 
 };
