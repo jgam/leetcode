@@ -19,7 +19,9 @@ var maxArea = function(height) {
     var start = middle-1;
     var end = middle;
 
-    
+    //start the for loop and keep expanding the array
+
+
 };
 
 maxArea([1,2,3,4,5,6,7,8,9])
