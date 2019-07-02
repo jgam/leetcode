@@ -33,6 +33,18 @@ var maxArea = function(height) {
         }
 
         //now adding 1 to start or end
+        if(start===0){
+            end += 1;
+        }
+        else if(end===height.length-1){
+            start -= 1;
+        }
+        else if(height[start]>height[end]){
+            end += 1;
+        }
+        else if(height[start]<height[end]){
+            start -= 1;
+        }
 
 
     }
