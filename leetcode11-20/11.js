@@ -23,6 +23,48 @@ var maxArea = function(height) {
 
     //start the for loop and keep expanding the array
 
+    function comparing(current_area, start, end, height){
+        let max_area2 = current_area;
+        let start2 = start;
+        let end2 = end;
+        let height2 = height;
+        let current_area2;
+
+        while(start2 ===0 && end2===height2.length-1){
+            current_area2 = Math.min(heihgt2[start2], height2[end2]) * (end2-start2);
+            
+            //comparing current and max area
+            if(current_area > max_area){
+                max_area2 = current_area;
+            }
+
+            //now adding 1 to start or end
+            if(start2===0){
+                end2 += 1;
+            }
+            else if(end2===height2.length-1){
+                start2 -= 1;
+            }
+            else if(height2[start]>height2[end]){
+                end2 += 1;
+            }
+            else if(height2[start]<height2[end]){
+                start2 -= 1;
+            }
+            else{
+                //so here is when start and end are the same...in here we should 
+                // we have to go two ways to make sure check everything
+                start2 -= 1;
+                continue;
+
+
+                //return Math.min(start_subtracting, end_addition);
+            }
+        }
+        return max_area2;
+
+    }
+
     while(start===0 && end ===height.length-1){
         
         current_area = Math.min(heihgt[start], height[end]) * (end-start);
@@ -48,12 +90,18 @@ var maxArea = function(height) {
         else{
             //so here is when start and end are the same...in here we should 
             // we have to go two ways to make sure check everything
+            let start_subtracting = comparing(current_area, start-1, end, height);
+            let end_addition = comparing(current_area, start, end+1, height);
+
+
+            return Math.min(start_subtracting, end_addition);
         }
 
 
     }
+    return max_area;
 
 
 };
 
-maxArea([1,2,3,4,5,6,7,8,9])
+console.log(maxArea([1,2,3,4,5,6,7,8,9]))
