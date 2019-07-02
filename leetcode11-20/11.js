@@ -91,11 +91,6 @@ var maxArea = function(height) {
         else{
             //so here is when start and end are the same...in here we should 
             // we have to go two ways to make sure check everything
-            let start_subtracting = comparing(current_area, start-1, end, height);
-            let end_addition = comparing(current_area, start, end+1, height);
-
-
-            return Math.min(start_subtracting, end_addition);
         }
 
 
