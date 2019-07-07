@@ -2,34 +2,35 @@
  * @param {string} digits
  * @return {string[]}
  */
-var letterCombinations = function(digits) {
-    let bruh = {"1": [''], "2":["a","b","c"], "3":["d","e","f"], "4":["g","h","i"], "5":["j","k","l"], "6":["m","n","o"], "7":["p","q","r","s"], "8":["t","u","v"], "9":["w","x","y","z"], "0":[" "]};
-    let ret = [];
+var letterCombinations = function (digits) {
+    if (digits.length == 0) return [];
+    let table = ["", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"];
+    let stack = [];
+    let res = [""];
+    digits = digits.split("");
+    console.log('original digits', digits)
+    for (i = 0; i < digits.length; i++) digits[i] = parseInt(digits[i], 10);
+    console.log('preprocessed digits', digits)    
+    for (num of digits) stack.push(table[num].split(""));
+    console.log('stack', stack)
+    //until this part is data preprocessing
+    console.log('res is ',res);
 
-    function allPossibleCases(arr) {
-        
-        if (arr.length == 1) {
-          return arr[0];
-        } 
-        else {
-          var result = [];
-          var allCasesOfRest = allPossibleCases(arr.slice(1));  // recur with the rest of array
-          for (var i = 0; i < allCasesOfRest.length; i++) {
-            for (var j = 0; j < arr[0].length; j++) {
-              result.push(arr[0][j] + allCasesOfRest[i]);
+    //by stack.shift() we are moving array to left each time
+    while (stack.length > 0) {
+        let len = res.length;
+        for (i = 0; i < len; i++) {
+            for (ltr of stack[0]) {
+                res.push(res[i] + ltr);
             }
-          }
-          return result;
+            console.log('res is ', res)
         }
-      
+        stack.shift();
     }
-
-    for(let i = 0; i< digits.length; i++){
-        ret.push(bruh[digits[i]]);
-    }
-
-    return allPossibleCases(ret);
-
+    res = res.filter((el) => {
+        return el.length == digits.length
+    })
+    return res;
 };
 
-letterCombinations('234');
+console.log(letterCombinations('234'));
