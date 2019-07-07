@@ -28,11 +28,8 @@ var letterCombinations = function(digits) {
         ret.push(bruh[digits[i]]);
     }
 
-    console.log(ret);
-    console.log(allPossibleCases(ret));
-    console.log('hi');
-    return 0;
+    return allPossibleCases(ret);
 
 };
 
-letterCombinations('23');
+letterCombinations('234');
