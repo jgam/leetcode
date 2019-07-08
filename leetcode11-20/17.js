@@ -27,9 +27,12 @@ var letterCombinations = function (digits) {
         }
         stack.shift();
     }
+
+    //it only filters the return array of length only 3
     res = res.filter((el) => {
         return el.length == digits.length
     })
+    
     return res;
 };
 
