@@ -3,17 +3,23 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    var ret_list = [];
-    for(let i = 0; i < nums.length; i++){
-        if(ret_list.includes(nums[i])){
-            continue;
+    let current = 0;
+    let original_length = nums.length;
+    var check = [];
+
+    while(current <= original_length){
+        if(check.includes(nums[current])){
+            nums.pop(current);
+            original_length -= 1;
+            continue
         }
         else{
-            ret_list.push(nums[i]);
+            check.push(nums[current]);
+            current += 1;
         }
     }
-    nums = ret_list;
-    return ret_list.length;
+
+    return nums.length;
 };
 
 
@@ -26,3 +32,5 @@ let len = removeDuplicates(nums);
 for (let v= 0; v < len; v++){
     console.log(nums[v]);
 }
+
+console.log(ret_list)
