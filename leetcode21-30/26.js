@@ -7,10 +7,13 @@ var removeDuplicates = function(nums) {
     let original_length = nums.length;
     var check = [];
 
-    while(current <= original_length){
+    while(current < original_length){
+        console.log('current is ', current);
+        console.log('nums is ', nums);
         if(check.includes(nums[current])){
-            nums.pop(current);
+            nums.splice(current, 1);
             original_length -= 1;
+            //current += 1;
             continue
         }
         else{
@@ -32,5 +35,3 @@ let len = removeDuplicates(nums);
 for (let v= 0; v < len; v++){
     console.log(nums[v]);
 }
-
-console.log(ret_list)
