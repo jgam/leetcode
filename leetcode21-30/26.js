@@ -8,8 +8,6 @@ var removeDuplicates = function(nums) {
     var check = [];
 
     while(current < original_length){
-        console.log('current is ', current);
-        console.log('nums is ', nums);
         if(check.includes(nums[current])){
             nums.splice(current, 1);
             original_length -= 1;
