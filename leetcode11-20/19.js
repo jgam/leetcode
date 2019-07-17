@@ -26,6 +26,7 @@ var removeNthFromEnd = function(head, n) {
     // cursor starts from head
     while (cursor) {
         if (step === 0) {
+            //console.log(cursor, prev.val, after.val)
             prev = prev.next;
             after = after.next;
         } else {
@@ -34,10 +35,7 @@ var removeNthFromEnd = function(head, n) {
 
         cursor = cursor.next;
     }
-    
     prev.next = after.next;//this makes the subtraction of the node.
-    after.next = null;
-    console.log(after);
-    console.log(head.next)
-    return head
+    //after.next = null;
+    return start.next
 };
