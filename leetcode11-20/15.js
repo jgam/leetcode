@@ -1,27 +1,30 @@
-/**
- * @param {number[]} nums
- * @return {number[][]}
- */
 var threeSum = function(nums) {
-    nums.sort()
-    console.log(nums)
-    var ret = [];
-    for(let i = 0; i<nums.length; i++){
-        for(let j =i+1; j< nums.length; j++){
-            let current = 0;
-            current = current - nums[i] - nums[j];
-            //the for loop range needs to be fixed here
-            if(nums.slice(j).includes(current)){
-                //this if needs to be checked
-                if(ret.includes([nums[i],nums[j],current])){
-                    continue
-                }
-                else{
-                    ret.push([nums[i],nums[j],current]);
-                }
+    nums.sort(function(a,b){
+        return a-b;
+    })
+    var target,result=[],len=nums.length;
+    for(var i=0;i<len;i++){
+        if (target===nums[i]){
+            continue;
+        }
+        else{
+            target=nums[i];
+        }
+        var low=i+1,high=len-1;
+        while(low<high){
+            if(nums[low]+nums[high]===-target){
+                result.push([target,nums[low],nums[high]]);
+                do{
+                   low++; 
+                }while(nums[low]===nums[low-1]);
+            }
+            else if(nums[low]+nums[high]<-target){
+                low++;
+            }
+            else{
+                high--;
             }
         }
     }
-    console.log(nums.slice(5))
-    return ret;
+    return result;
 };
