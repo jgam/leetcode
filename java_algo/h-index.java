@@ -23,7 +23,7 @@ class Solution {
                 }
                 
                 if(ret_num == i){
-                    if((citations.length - ret_num) <= i){
+                    if((citations.length - ret_num) < i){
                         return ret_num;
                     }
                 }
@@ -34,3 +34,5 @@ class Solution {
     
     
 }
+
+//[3,0,6,1,5,1,1,1,1] => 1
