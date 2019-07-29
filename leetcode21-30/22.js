@@ -5,7 +5,10 @@ var generateParenthesis = function(n) {
     var result = []
     var array = []
     
-    array = Array(n).fill('(') + Array(n).fill(')');
+    for(let i = 0; i < n; i++){
+        //what is this?
+        
+    }
     
     
     console.log(array)
