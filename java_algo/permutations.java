@@ -16,6 +16,16 @@ public class Solution{
 
         System.out.println(power(N));
 
+        ArrayList<ArrayList<String>> graph = new ArrayList<>();
+		for(int i = 0; i < N; i++){
+			graph.add(new ArrayList<String>());
+		}
+
+        System.out.println(graph);
+
+        for(int i = 0; i < N; i++){
+            //here call recursively.
+        }
 
     }
 
@@ -25,5 +35,10 @@ public class Solution{
             current = current * 2;
         }
         return current;
+    }
+
+    public static long permute(){
+        return 0;
+
     }
 }
