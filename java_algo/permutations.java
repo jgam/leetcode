@@ -14,6 +14,8 @@ public class Solution{
         System.out.println(abc);
         abc += "asdfasdf";
         System.out.println(abc);
+        String oh = "O";
+        String ex = "X";
         
         Scanner scanner = new Scanner(System.in);
 		N = scanner.nextInt();
@@ -28,9 +30,16 @@ public class Solution{
 		}
 
         System.out.println(graph);
-
-        permute(N, current, 1, "O");
-        permute(N, current, 2, "X");
+        if(N == 1){
+            System.out.println("O");
+            System.out.println("X");
+        }
+        else{
+            permute(N, current, 1, oh);
+            permute(N, current, 2, oh);
+            permute(N, current, 1, ex);
+            permute(N, current, 2, ex);
+        }
 
     }
 
@@ -42,10 +51,10 @@ public class Solution{
         return current;
     }
 
-    public static long permute(int N, int current, int condition, char currentString){
-        while(N >= current){
+    public static long permute(int N, int current, int condition, String currentString){
+        while(N > current){
             if(condition == 1){
-                currentString += 'O';
+                currentString += "O";
                 current += 1;
                 permute(N, current, 1, currentString);
                 permute(N, current, 2, currentString);
@@ -57,7 +66,7 @@ public class Solution{
                 permute(N, current, 2, currentString);
             }
         }
-        System.out.print(currentString);
+        System.out.println(currentString);
         return 0;
 
     }
