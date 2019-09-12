@@ -16,6 +16,7 @@ public class Solution{
 
         System.out.println(ret);
     }
+    //this is permutations
     public static int factorialed(int input, int end, int division){
         int factorial = 1;
         int start_division = 1;
@@ -23,9 +24,11 @@ public class Solution{
         //I should find a way to divide large numbers to small numbers before hand.
         for(int i = input; i > end; i--){
             factorial = factorial * i;
+            //because the number gets big
             factorial = factorial / start_division;
             if (start_division > division){
                 start_division = 1;
+                //added condition if second factorial already hit the max
                 second = true;
             }
             else{
