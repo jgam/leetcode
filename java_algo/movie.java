@@ -12,14 +12,31 @@ public class Solution{
         M = scanner.nextInt();
         //input done
 
-        ret = factorialed(N, N-M) / factorialed(M, 0);
+        ret = factorialed(N, N-M, M);
 
         System.out.println(ret);
     }
-    public static int factorialed(int input, int end){
+    public static int factorialed(int input, int end, int division){
         int factorial = 1;
+        int start_division = 1;
+        boolean second = false;
+        //I should find a way to divide large numbers to small numbers before hand.
         for(int i = input; i > end; i--){
             factorial = factorial * i;
+            factorial = factorial / start_division;
+            if (start_division > division){
+                start_division = 1;
+                second = true;
+            }
+            else{
+                if(second){
+                    continue;
+                }
+                else{
+                    start_division += 1;
+                }
+            }
+
         }
         return factorial;
     }
