@@ -10,21 +10,19 @@ public class Solution{
         Scanner scanner = new Scanner(System.in);
 		N = scanner.nextInt();
         M = scanner.nextInt();
-        ret = N;
-
+        
+        System.out.println(factorialed(N));
         //input done
 
-        for(int i = 1; i < N; i ++){
-            ret = i * ret;
-        }
-        for(int i = 1; i <= N-M; i++){
-            ret = ret / i;
-        }
-
-        for(int i = 1; i <= M; i++){
-            ret = ret / i;
-        }
+        ret = factorialed(N) / factorialed(N-M) / factorialed(M);
 
         System.out.println(ret);
+    }
+    public static int factorialed(int input){
+        int factorial = 1;
+        for(int i = 1; i <= input; i++){
+            factorial = factorial * i;
+        }
+        return factorial;
     }
 }
