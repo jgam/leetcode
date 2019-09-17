@@ -27,4 +27,36 @@ public class Main{
 
         
     }
+    public static void fillin(ArrayList v){
+        //here fill in the numbers in v
+
+        //we need missing numbers and fill them randomly 
+
+    }
+
+    public static boolean horizontal(ArrayList v){
+        // check horizontal
+        double sum = 0;
+        for(int i = 0; i < 9; i++){
+            for(int j = 0; j<9; j++){
+                sum += v[i][j];
+            }
+            if(sum != 45){
+                return false;
+            }
+            else{
+                sum = 0;
+            }
+        }
+        return true;
+    }
+
+    public static boolean vertical(ArrayList v){
+        // check vertical
+    }
+
+    public static boolean threebythree(ArrayList v){
+        //check three by three
+
+    }
 }
