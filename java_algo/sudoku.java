@@ -11,11 +11,18 @@ public class Main{
         ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
 
         for(int i = 0; i < 9; i++){
+            ArrayList <Integer> arl = new ArrayList<Integer>();
             Scanner scanner = new Scanner(System.in);
-		    N = scanner.nextInt();
-            //for loop needed for 9 numbers
-            graph.add(N);
+            for(int j = 0; j < 9; j++){
+                arl.add(scanner.nextInt());
+            }
+            System.out.println(arl);
+            //here I should come up with vertical, horizontal, 3 square.
+            //horizontal done.
+            graph.add(arl);
         }
+
+        System.out.println(graph);
 
 
         
