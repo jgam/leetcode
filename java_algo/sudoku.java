@@ -9,11 +9,10 @@ public class Main{
     static int M;
     public static void main(String[] args){
         ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
-
-        for(int i = 0; i < 9; i++){
+        for(int i = 0; i < 2; i++){
             ArrayList <Integer> arl = new ArrayList<Integer>();
             Scanner scanner = new Scanner(System.in);
-            for(int j = 0; j < 9; j++){
+            for(int j = 0; j < 2; j++){
                 arl.add(scanner.nextInt());
             }
             System.out.println(arl);
@@ -21,8 +20,8 @@ public class Main{
             //horizontal done.
             graph.add(arl);
         }
-
         System.out.println(graph);
+        System.out.println(vertical(graph));
 
 
         
@@ -33,13 +32,18 @@ public class Main{
         //we need missing numbers and fill them randomly 
 
     }
-
+    //takes in a list of list of integers
     public static boolean horizontal(ArrayList v){
         // check horizontal
         double sum = 0;
-        for(int i = 0; i < 9; i++){
-            for(int j = 0; j<9; j++){
-                sum += v[i][j];
+        ArrayList<Integer> temp = new ArrayList<Integer>();
+        for(int i = 0; i < 2; i++){
+            //temp = v.get(i);
+            for(int j = 0; j<2; j++){
+                System.out.println(v.get(i));
+                //System.out.println(v.get(i).get(j));
+
+                //sum += v.get(i).get(j);
             }
             if(sum != 45){
                 return false;
@@ -50,13 +54,35 @@ public class Main{
         }
         return true;
     }
-
+    
+    //takes in a list of list of integers
     public static boolean vertical(ArrayList v){
         // check vertical
+        int nums[][];
+        nums = new int[9][9];
+
+        for(int i = 0; i < 9; i ++){
+            for(int j = 0; j < 9; j++){
+                nums[i][j]= 3;
+                System.out.println(nums[i][j]);
+            }
+        }
+/*
+        if(horizontal(nums)){//new_graph)){
+            System.out.println("vertical function working fine");
+            return true;
+        }
+*/
+        return false;
     }
 
     public static boolean threebythree(ArrayList v){
         //check three by three
+        ArrayList<ArrayList<Integer>> new_graph = new ArrayList<>();
+
+        return true;
+        
+
 
     }
 }
