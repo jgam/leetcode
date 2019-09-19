@@ -7,21 +7,24 @@ import java.util.LinkedList;
 public class Main{
     static int N;
     static int M;
+    static int nums[][];
+    
     public static void main(String[] args){
-        ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
+
+        nums = new int[9][9];
+        
         for(int i = 0; i < 2; i++){
-            ArrayList <Integer> arl = new ArrayList<Integer>();
             Scanner scanner = new Scanner(System.in);
+            
             for(int j = 0; j < 2; j++){
-                arl.add(scanner.nextInt());
+                nums[i][j] = scanner.nextInt();
             }
-            System.out.println(arl);
+            System.out.println(nums);
             //here I should come up with vertical, horizontal, 3 square.
             //horizontal done.
-            graph.add(arl);
         }
-        System.out.println(graph);
-        System.out.println(vertical(graph));
+        
+        System.out.println("done");
 
 
         
