@@ -20,17 +20,22 @@ public class Main{
                 nums[i][j] = scanner.nextInt();
             }
             System.out.println(nums);
+            System.out.println(nums instanceof int[][]);
             //here I should come up with vertical, horizontal, 3 square.
             //horizontal done.
         }
-        
+
         System.out.println("done");
+        fillin(nums);
 
 
         
     }
-    public static void fillin(ArrayList v){
+    public static void fillin(int[][] v){
         //here fill in the numbers in v
+        int sum = 0;
+        sum = v[0][0] + v[1][1];
+        System.out.println(sum);
 
         //we need missing numbers and fill them randomly 
 
