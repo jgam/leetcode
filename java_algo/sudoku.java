@@ -33,10 +33,10 @@ public class Main{
     }
     public static void fillin(int[][] v){
         //here fill in the numbers in v
-        int sum = 0;
-        sum = v[0][0] + v[1][1];
-        System.out.println(sum);
-
+        ArrayList<Integer> temp = new ArrayList<>();
+        for(int i = 0; i< 9; i++){
+            temp.add(i)
+        }
         //we need missing numbers and fill them randomly 
 
     }
