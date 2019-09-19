@@ -13,10 +13,10 @@ public class Main{
 
         nums = new int[9][9];
         
-        for(int i = 0; i < 2; i++){
+        for(int i = 0; i < 9; i++){
             Scanner scanner = new Scanner(System.in);
             
-            for(int j = 0; j < 2; j++){
+            for(int j = 0; j < 9; j++){
                 nums[i][j] = scanner.nextInt();
             }
             System.out.println(nums);
@@ -41,17 +41,14 @@ public class Main{
 
     }
     //takes in a list of list of integers
-    public static boolean horizontal(ArrayList v){
+    public static boolean horizontal(int[][] v){
         // check horizontal
         double sum = 0;
-        ArrayList<Integer> temp = new ArrayList<Integer>();
-        for(int i = 0; i < 2; i++){
-            //temp = v.get(i);
-            for(int j = 0; j<2; j++){
-                System.out.println(v.get(i));
-                //System.out.println(v.get(i).get(j));
 
-                //sum += v.get(i).get(j);
+        for(int i = 0; i < 9; i++){
+
+            for(int j = 0; j<9; j++){
+                sum += v[i][j];
             }
             if(sum != 45){
                 return false;
@@ -64,30 +61,36 @@ public class Main{
     }
     
     //takes in a list of list of integers
-    public static boolean vertical(ArrayList v){
+    public static boolean vertical(int[][] v){
         // check vertical
         int nums[][];
         nums = new int[9][9];
 
         for(int i = 0; i < 9; i ++){
             for(int j = 0; j < 9; j++){
-                nums[i][j]= 3;
-                System.out.println(nums[i][j]);
+                nums[j][i]= v[i][j];
             }
         }
-/*
-        if(horizontal(nums)){//new_graph)){
+
+        if(horizontal(nums)){
             System.out.println("vertical function working fine");
             return true;
         }
-*/
         return false;
     }
 
-    public static boolean threebythree(ArrayList v){
+    public static boolean threebythree(int[][] v){
         //check three by three
-        ArrayList<ArrayList<Integer>> new_graph = new ArrayList<>();
-
+        for(int i = 0; i < 3; i++){
+            int index = i * 3;
+            for(int j = 0; j < 9; j+=3){
+                int sum;
+                sum = v[index][j]+v[index+1][j]+v[index+2][j]+v[index][j+1] + v[index+1][j+1] + v[index+2][j+1] + v[index][j+2] + v[index+1][j+2] + v[index+2][j+2];
+                if(sum != 45){
+                    return false;
+                }
+            }
+        }
         return true;
         
 
