@@ -17,5 +17,5 @@ var myPow = function(x, n) {
         return 1/Math.pow(x,new_var);
     }
 };
-
+//completed
 console.log(myPow(2,-3));
