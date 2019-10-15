@@ -4,12 +4,29 @@ var generateParenthesis = function(n) {
     let current = 0;
     var result = []
     var array = []
-    
-    for(let i = 0; i < n; i++){
-        //what is this?
-        
+
+    var stack_num = 0;
+    var stack_length = n * 2;
+
+    var current_string = '(';
+
+    function generating(stack_num, added_string, current_string){
+        if (stack_num < 0){
+            return null;
+        }
+        else{
+            if(stack_num === 0 && current_string.length() === n*2){
+                array.add(current_string);
+            }
+            else{
+                current_string += added_string;
+                generating(stack_num+1, '(', current_string);
+                generating(stack_num-1, ')', current_string);
+            }
+        }
     }
-    
+
+
     
     console.log(array)
     
