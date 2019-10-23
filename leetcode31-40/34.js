@@ -34,15 +34,18 @@ var searchRange = function(nums, target) {
     }
 
     //finding the start
+    var new_start = curr_index;
     while(true){
-        
+        new_start = index_division(new_start);
 
-        if(nums[curr_index] < target){
+        if(nums[new_start] >= target){
             //increase the index
+            
+
         }
         else{
 
-        }
+        }   
     }
     //finding the end
 
