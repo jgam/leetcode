@@ -11,8 +11,16 @@ var searchRange = function(nums, target) {
     var end = 0;
 
     //function index division
-    function index_division(){
+    function index_division(curr_index){
+        if(curr_index %2 == 0){
+            curr_index = curr_index / 2;
+        }
+        else{
+            curr_index = curr_index - 1;
+            curr_index = curr_index / 2;
+        }
 
+        return curr_index;
     }
 
     while(false){
@@ -27,13 +35,7 @@ var searchRange = function(nums, target) {
 
     //finding the start
     while(true){
-        if(curr_index %2 == 0){
-            curr_index = curr_index / 2;
-        }
-        else{
-            curr_index = curr_index - 1;
-            curr_index = curr_index / 2;
-        }
+        
 
         if(nums[curr_index] < target){
             //increase the index
