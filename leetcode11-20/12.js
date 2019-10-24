@@ -8,17 +8,20 @@ var intToRoman = function(num) {
     let ret = '';
 
     function getString(number, bracket){
+        //bracket is 10 to the power
         let ret_string = '';
         let count = number;
         let numString = bracket.toString();
 
         if(number === 4){
             //do 4
+            ret += str2num[numString]+str2num[(bracket*5).toString()];
         }
         else{
             //do others
+            ret += str2num[numString].repaet(count);
         }
-        ret += str2num[numString].repeat(count);
+        
         return ret_string;
     }
 
