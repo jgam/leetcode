@@ -7,14 +7,18 @@ var intToRoman = function(num) {
     let str2num = {"1":"I", "5":"V", "10":"X", "50":"L", "100":"C", "500":"D", "1000":"M"};
     let ret = '';
 
-    function getString(number){
+    function getString(number, bracket){
         let ret_string = '';
-        
+        let count = number;
+        let numString = bracket.toString();
+
+        ret += str2num[numString].repeat(count);
         return ret_string;
     }
 
-    function getmoreString(number){
+    function getmoreString(number, bracket){
         let ret_string= '';
+        let count = (number - 5)
 
         return ret_string;
     }
@@ -28,13 +32,16 @@ var intToRoman = function(num) {
 
     for(var i = 0; i < current_num.length; i++){
         let real_number;
-        real_number = int(current_num[i]) * current_length;
+        let number_bracket = 10 ** current_length;
+        real_number = int(current_num[i]) * number_bracket;
         
         if(int(current_num[i] > 5)){
             //run more than 5
+            getmoreString(real_number/number_bracket, number_bracket);
         }
         else{
             //run less than 5
+            getString(real_number, number_bracket);
         }
         
         current_length -= 1
