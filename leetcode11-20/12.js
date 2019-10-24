@@ -12,6 +12,12 @@ var intToRoman = function(num) {
         let count = number;
         let numString = bracket.toString();
 
+        if(number === 4){
+            //do 4
+        }
+        else{
+            //do others
+        }
         ret += str2num[numString].repeat(count);
         return ret_string;
     }
@@ -20,6 +26,12 @@ var intToRoman = function(num) {
         let ret_string= '';
         let count = (number - 5)
 
+        if(number === 9){
+            //do 9
+        }
+        else{
+            // do 10
+        }
         return ret_string;
     }
 
