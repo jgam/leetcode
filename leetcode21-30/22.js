@@ -18,6 +18,10 @@ var generateParenthesis = function(n) {
             if(stack_num === 0 && current_string.length() === n*2){
                 array.add(current_string);
             }
+            else if(stack_num > 0){
+                current_string += added_string;
+                generating(stack_num+1, '(', current_string);
+            }
             else{
                 current_string += added_string;
                 generating(stack_num+1, '(', current_string);
@@ -25,6 +29,8 @@ var generateParenthesis = function(n) {
             }
         }
     }
+
+    generating()
 
 
     

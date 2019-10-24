@@ -20,5 +20,8 @@ def solution(board):
             elif(board[i][j] = board[i+1][j]):
                 if(board[i][j]=board[i+2][j]):
                     return 2
-            elif(board[i][j]=board)
+            elif(board[i][j]=board[i+1][j+1]):
+                if(board[i][j]=board[i+2][j+1]):
+                    return 8
+            elif(board[i])
     return answer
