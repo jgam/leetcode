@@ -21,6 +21,8 @@ var longestCommonPrefix = function(strs) {
         var new_str = current.slice(0, i)
         for(var j = 0; j < strs.length; j++){
             //console.log(strs[j],new_str);
+
+            // this part is the longest substring
             if(strs[j].indexOf(new_str) >= 0){
                 if(j === strs.length -1){
                     return new_str
