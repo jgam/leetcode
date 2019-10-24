@@ -18,6 +18,10 @@ var intToRoman = function(num) {
             //do 4
             ret_string = str2num[numString]+str2num[(bracket*5).toString()];
         }
+        else if(number === 5){
+            //do 5
+            ret_string = str2num[(bracket*5).toString()];
+        }
         else{
             //do others
             ret_string = str2num[numString].repeat(count);
@@ -74,7 +78,7 @@ var intToRoman = function(num) {
     }
 
     console.log(ret);
-    return null;
+    return ret;
 };
 
-intToRoman(1234)
+intToRoman(50)
