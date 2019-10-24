@@ -32,6 +32,8 @@ var intToRoman = function(num) {
 
     function getmoreString(real_number, bracket){
         //bracket = 100, 1000 , etc
+        console.log('dhereererer');
+        console.log(real_number, bracket);
         let ret_string= '';
         let number = real_number / bracket;
         let count = (number - 5)
@@ -44,6 +46,7 @@ var intToRoman = function(num) {
         }
         else{
             // do 10
+            console.log(count);
             ret_string = str2num[(bracket*5).toString()] + str2num[numString].repeat(count)
         }
         return ret_string;
@@ -65,7 +68,7 @@ var intToRoman = function(num) {
         if(parseInt(current_num[i]) > 5){
             console.log('number of get more string gets called should be none');
             //run more than 5
-            ret += getmoreString(real_number/number_bracket, number_bracket);
+            ret += getmoreString(real_number, number_bracket);
         }
         else{
             console.log('here comes a lot');
@@ -81,4 +84,4 @@ var intToRoman = function(num) {
     return ret;
 };
 
-intToRoman(1994)
+intToRoman(1900)
