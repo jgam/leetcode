@@ -22,5 +22,23 @@ var intToRoman = function(num) {
     var current = 0;
     var mod_num = 10;
     
-    
+    var current_num = num.toString();
+    console.log(current_num.length);
+    var current_length = current_num.length-1;
+
+    for(var i = 0; i < current_num.length; i++){
+        let real_number;
+        real_number = int(current_num[i]) * current_length;
+        
+        if(int(current_num[i] > 5)){
+            //run more than 5
+        }
+        else{
+            //run less than 5
+        }
+        
+        current_length -= 1
+    }
 };
+
+intToRoman(1234)
