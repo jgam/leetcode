@@ -7,6 +7,9 @@ var longestCommonPrefix = function(strs) {
         return '';
     }
     
+<<<<<<< HEAD
+};
+=======
     if(strs.length === 1){
         return strs[0];
     }
@@ -39,3 +42,4 @@ var longestCommonPrefix = function(strs) {
 };
 
 console.log(longestCommonPrefix(['flower','flo','flour']));
+>>>>>>> 40b93bd8d5023095c7ef669b9df174f6e441b056
