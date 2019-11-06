@@ -14,7 +14,7 @@ var rotate = function(matrix) {
     matrix = Object.assign(matrix, return_array);
     return null;
 };
-//0 2, 2 0
+//0 2, 2 0 llll
 
 //2 0 2 1 2 2
 
