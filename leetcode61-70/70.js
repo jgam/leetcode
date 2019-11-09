@@ -3,15 +3,16 @@
  * @return {number}
  */
 var climbStairs = function(n) {
-  if (n === 0) {
-    return 0;
-  } else if (n === 1) {
-    return 1;
-  } else if (n === 2) {
-    return 2;
-  } else {
-    return climbStairs(n - 1) + climbStairs(n - 2);
+  const arr = [0, 1];
+  for (let i = 2; i < n + 2; i++) {
+    arr[i] = arr[i - 1] + arr[i - 2];
   }
+  const finalIdx = arr.length - 1;
+  return arr[finalIdx];
 };
 
-console.log(climbStairs(2)); //output 3
+console.log(climbStairs(45)); //output 3
+
+//1111, 112, 121, 211, 22
+
+//11111, 1112, 1121, 1211, 2111, 122, 212, 221
