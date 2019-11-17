@@ -8,7 +8,6 @@ dy = [0,0,1,-1]
 
 def bfs(matrix, cnt, x, y):
     matrix[x][y]=0
-    # 이건 이제 이미 간것이다. 그래서 0으로 바꾼다
     queue = []
     queue.append((x, y))
     while len(queue) > 0:
