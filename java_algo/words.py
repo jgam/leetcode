@@ -2,15 +2,15 @@ string_num = int(raw_input())
 string_list = []
 
 for _ in range(string_num):
-    word = str(raw_input())
-    word_count = len(word)
-    string_list.append((word, word_count))
+    string = str(raw_input())
+    string_count = len(string)
+    string_list.append((string, string_count))
 
 
 string_list = list(set(string_list))
 
 
-words_list.sort(key=lambda word: (word[1], word[0]))
+string_list.sort(key=lambda string: (string[1], string[0]))
 
-for word in words_list:
-    print(word[0])
+for i in string_list:
+    print(i[0])
