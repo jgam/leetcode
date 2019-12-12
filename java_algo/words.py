@@ -1,11 +1,16 @@
-import fileinput
-
-
 string_num = int(raw_input())
 string_list = []
 
-for i in range(string_num):
-    current = str(raw_input())
-    string_list.append(current)
+for _ in range(string_num):
+    word = str(raw_input())
+    word_count = len(word)
+    string_list.append((word, word_count))
 
-print(string_list)
+
+string_list = list(set(string_list))
+
+
+words_list.sort(key=lambda word: (word[1], word[0]))
+
+for word in words_list:
+    print(word[0])
