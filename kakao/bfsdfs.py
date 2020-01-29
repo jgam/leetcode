@@ -1,14 +1,18 @@
 def bfs(graph, start_node):
     visit = list()
     queue = list()
-
+    print('in bfs')
+    #first in first out
     queue.append(start_node)
+    #queue = [A], visit = []
 
     while queue:
         node = queue.pop(0)
         if node not in visit:
             visit.append(node)
-            queue.extend(graph[node])
+            print(visit)#['A']
+            queue.extend(graph[node])#['A','C','H']
+            print(queue)#['B']
 
     return visit
 
