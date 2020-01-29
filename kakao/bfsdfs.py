@@ -27,7 +27,7 @@ def dfs(graph, start_node):
 
     return visit
 
-
+#gogo
 if __name__ == "__main__":
     graph = {
         'A': ['B'],
