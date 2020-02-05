@@ -13,9 +13,9 @@ def maxMin(k, arr):
     #[1 2 3 4 5 6 7 8]
     answer = arr[-1]
     for endIndex in range(k,len(arr)+1):
-        newArr = arr[endIndex-k:endIndex]#this is the subarray
-        maxNewArr = newArr[-1]
-        minNewArr = newArr[0]
+        #newArr = arr[endIndex-k:endIndex]#this is the subarray
+        maxNewArr = arr[endIndex-1]
+        minNewArr = arr[endIndex-k]
 
         if answer > (maxNewArr - minNewArr):
             answer = maxNewArr - minNewArr
