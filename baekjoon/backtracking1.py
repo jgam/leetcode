@@ -17,8 +17,6 @@ class Solution:
         # *********dp
 
         # backgracking---------
-        open_var = n
-        close_var = n
         answer = []
 
         def generate(current, open_var, close_var):
