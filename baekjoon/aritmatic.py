@@ -24,3 +24,27 @@ class Solution:
 
         return sum(dp)
 # with dp you can incremenet number from the previous dp index.
+
+        # Dp way
+        """
+        if len(A) < 3:
+            return 0
+        
+        dp = [0,0]
+        numCount = 2
+        pattern = A[1]-A[0]
+        
+        for i in range(2, len(A)):
+            if A[i] - A[i-1] == pattern:
+                numCount += 1
+                if numCount >= 3:
+                    dp.append(dp[i-1] + 1)
+                else:
+                    dp.append(0)
+            else:
+                pattern = A[i] - A[i-1]
+                numCount = 2
+                dp.append(0)
+
+        return sum(dp)
+        """
