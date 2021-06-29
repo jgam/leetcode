@@ -31,6 +31,7 @@ func abs(a int) int {
     
     return a
 }
+//max functino?
 
 func max(a, b int) int {
     if a > b {
